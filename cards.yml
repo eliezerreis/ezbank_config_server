@@ -7,9 +7,9 @@ spring:
     active: default
   datasource:
     driver-class-name: org.h2.Driver
-    url: "{chiper}jdbc:h2:file:/Users/eliezeroliveira/data/carddb;AUTO_SERVER=TRUE"
-    username: "{chiper}dd2b11be0b78a3f276e6751b946f3498978f74c4438e9932feffc0b95d993eb5"
-    password: "{chiper}140ba471b5a234a2af43e76d72884ff2a01316600ac6116b5a128fde0ce5005f"
+    url: "{cipher}jdbc:h2:file:/Users/eliezeroliveira/data/carddb;AUTO_SERVER=TRUE"
+    username: "{cipher}dd2b11be0b78a3f276e6751b946f3498978f74c4438e9932feffc0b95d993eb5"
+    password: "{cipher}140ba471b5a234a2af43e76d72884ff2a01316600ac6116b5a128fde0ce5005f"
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5

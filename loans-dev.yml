@@ -5,4 +5,4 @@ logging:
     name: logs/loans-dev.log
 spring:
   datasource:
-    url: "{chiper}43af5b2e77728024ae54cedfe8e985f4a44e2d8b7b5a06de22d2d553f2fff76386dc64970402eadbbb786cffb5899a3ddda448e4613b00fb34b97edb7e67b15e"
+    url: "{cipher}43af5b2e77728024ae54cedfe8e985f4a44e2d8b7b5a06de22d2d553f2fff76386dc64970402eadbbb786cffb5899a3ddda448e4613b00fb34b97edb7e67b15e"
