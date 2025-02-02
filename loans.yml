@@ -1,0 +1,25 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: Loans
+  profile:
+    active: default
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "{chiper}03db75d0ffeb689a94d77a72c80195b6c779be3a6b2e585e30ab9218b62e7f813fdcea63284387efbbaa616fadba9afb7a57c00ea867f6a2062556962ea1c20764196bc25617c530dfada89a0acb813cb86c72610d6f95cf471f224277a53779"
+    username: "{chiper}dd2b11be0b78a3f276e6751b946f3498978f74c4438e9932feffc0b95d993eb5"
+    password: "{chiper}7749443b975ed724d604d01b351b0e51b99b7577b345d4b8925f407f09fdb009"
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  sql:
+    init:
+      mode: always
