@@ -1,0 +1,15 @@
+author:
+  name: Eliezer Oliveira
+  email: eliezerreis@gmail.com
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${serve.port}/eureka/
