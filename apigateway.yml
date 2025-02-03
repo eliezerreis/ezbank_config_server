@@ -8,12 +8,6 @@ server:
 spring:
   application:
     name: apigateway
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: false
-          lowerCaseServiceId: true
 
 eureka:
   instance:
