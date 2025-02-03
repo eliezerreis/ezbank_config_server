@@ -13,6 +13,15 @@ spring:
           enabled: false
           lowerCaseServiceId: true
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
+      
 management:
   endpoints:
     web:
