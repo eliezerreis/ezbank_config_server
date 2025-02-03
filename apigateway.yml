@@ -5,6 +5,13 @@ author:
 server:
   port: 8080
 
+spring:
+  could:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
 management:
   endpoints:
     web:
