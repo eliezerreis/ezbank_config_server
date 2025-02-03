@@ -6,6 +6,8 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: apigateway
   cloud:
     gateway:
       discovery:
@@ -51,5 +53,5 @@ info:
 logging:
   level:
     com:
-      eazybytes:
-        gatewayserver: DEBUG
+      ezbank:
+        apigateway: DEBUG
