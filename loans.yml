@@ -6,7 +6,7 @@ server:
   port: 8092
 spring:
   application:
-    name: Loans
+    name: loans
   profile:
     active: default
   datasource:

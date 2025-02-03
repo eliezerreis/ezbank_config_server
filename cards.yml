@@ -6,7 +6,7 @@ server:
   port: 8091
 spring:
   application:
-    name: Cards
+    name: cards
   profile:
     active: default
   datasource:
