@@ -28,11 +28,28 @@ spring:
     init:
       mode: always
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+  info:
+    app:
+      name: 'loans'
+      description: 'EzBank Loans Application'
+      version: 0.0.1
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  info:
+    env:
+      enabled: true
   health:
     readiness-state:
       enabled: true
@@ -42,3 +59,4 @@ management:
     health:
       probes:
         enabled: true
+    shutdown: unrestricted
