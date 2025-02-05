@@ -7,8 +7,6 @@ server:
 spring:
   application:
     name: "cards"
-  profile:
-    active: default
   datasource:
     driver-class-name: org.h2.Driver
     url: "{cipher}3641abcb95e9ad17448d38586b94226b09171a0a80b2f69868392ea646ad1511587730662a850dfde0b99037465fb02091f6dd8b4dda72cecec45e4ae2d4882c8065bfb5a3da5619830dd77d374b6f70d70e80b4583f6b278243ef50d2c66ccb"

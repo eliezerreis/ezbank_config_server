@@ -7,8 +7,6 @@ server:
 spring:
   application:
     name: "loans"
-  profile:
-    active: default
   datasource:
     driver-class-name: org.h2.Driver
     url: "{cipher}03db75d0ffeb689a94d77a72c80195b6c779be3a6b2e585e30ab9218b62e7f813fdcea63284387efbbaa616fadba9afb7a57c00ea867f6a2062556962ea1c20764196bc25617c530dfada89a0acb813cb86c72610d6f95cf471f224277a53779"
