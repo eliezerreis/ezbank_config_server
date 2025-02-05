@@ -8,7 +8,7 @@ server:
 spring:
   application:
     name: "accounts"
-  profiles:
+  profile:
     active: default
   datasource:
     driver-class-name: org.h2.Driver
