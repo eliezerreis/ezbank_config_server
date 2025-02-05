@@ -7,7 +7,7 @@ server:
 
 spring:
   application:
-    name: apigateway
+    name: "apigateway"
   cloud:
     gateway:
       discovery:
@@ -22,32 +22,32 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8081/eureka/
+      defaultZone: "http://localhost:8081/eureka/"
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-  endpoint:
-    health:
-      probes:
-        enabled: true
-    gateway:
-      access: unrestricted
-  info:
-    env:
-      enabled: true
   health:
     readiness-state:
       enabled: true
     liveness-state:
       enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
 
 info:
   app:
-    name: 'apigateway'
-    description: 'API Gateway'
+    name: "apigateway"
+    description: "API Gateway"
     version: 0.0.1
 
 logging:

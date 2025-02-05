@@ -6,12 +6,12 @@ server:
   port: 8091
 spring:
   application:
-    name: cards
+    name: "cards"
   profile:
     active: default
   datasource:
     driver-class-name: org.h2.Driver
-    url: "{cipher}jdbc:h2:file:/Users/eliezeroliveira/data/carddb;AUTO_SERVER=TRUE"
+    url: "{cipher}3641abcb95e9ad17448d38586b94226b09171a0a80b2f69868392ea646ad1511587730662a850dfde0b99037465fb02091f6dd8b4dda72cecec45e4ae2d4882c8065bfb5a3da5619830dd77d374b6f70d70e80b4583f6b278243ef50d2c66ccb"
     username: "{cipher}dd2b11be0b78a3f276e6751b946f3498978f74c4438e9932feffc0b95d993eb5"
     password: "{cipher}140ba471b5a234a2af43e76d72884ff2a01316600ac6116b5a128fde0ce5005f"
     hikari:
@@ -35,12 +35,12 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8081/eureka/
+      defaultZone: "http://localhost:8081/eureka/"
 
 info:
   app:
-    name: 'cards'
-    description: 'EzBank Cards Application'
+    name: "cards"
+    description: "EzBank Cards Application"
     version: 0.0.1
 
 management:
@@ -48,9 +48,6 @@ management:
     web:
       exposure:
         include: "*"
-  info:
-    env:
-      enabled: true
   health:
     readiness-state:
       enabled: true
@@ -62,3 +59,6 @@ management:
         enabled: true
     shutdown:
       access: unrestricted
+  info:
+    env:
+      enabled: true
