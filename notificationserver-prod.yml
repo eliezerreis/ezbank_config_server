@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: INFO
+  file:
+    name: logs/notificationserver-dev.log
+spring:
+  datasource:
+    url: "{cipher}0d2dc0a4d376bf5ce75ccf37458ca41b3de92f13130a88e3f2c9c56e2702ac6c0da90252a1fc1d1fe8b200e47ea0f24d9825ccb4d5b2f8ba9ba21a2f0278401ba54232137d6badf8cb689978a123f031"

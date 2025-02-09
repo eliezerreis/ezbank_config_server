@@ -1,0 +1,89 @@
+author:
+  name: Eliezer Oliveira
+  email: eliezerreis@gmail.com
+
+server:
+  port: 8090
+
+
+server:
+  port: 8093
+
+spring:
+  application:
+    name: notificationserver
+  cloud:
+    stream:
+      rabbit:
+        default:
+          consumer:
+#            bind-queue: true
+#            declare-exchange: true
+            queue-name-group-only: true
+          producer:
+            exchange-type: topic
+        bindings:
+          processEmail-in-0:
+            consumer:
+              dead-letter-exchange: accounts-events.dlx
+              dead-letter-routing-key: accounts-events.welcome-email.dlq
+              auto-bind-dlq: true
+              binding-routing-key: accounts-events.welcome-email
+          processSms-in-0:
+            consumer:
+              dead-letter-exchange: accounts-events.dlx
+              dead-letter-routing-key: accounts-events.welcome-sms.dlq
+              auto-bind-dlq: true
+              binding-routing-key: accounts-events.welcome-sms
+#           In case I want to declare a routing
+#          processEmail-out-0:
+#            producer:
+#              routing-key: notifications-events.#
+
+      bindings:
+        processEmail-in-0:
+          destination: accounts-events
+          group: welcome-email
+
+        processEmail-out-0:
+          destination: notifications-events
+
+        processSms-in-0:
+          destination: accounts-events
+          group: welcome-sms
+
+    function:
+      definition: processEmail; processSms
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
+
+info:
+  app:
+    name: "notificationserver"
+    description: "EzBank Notification Application"
+    version: 0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
