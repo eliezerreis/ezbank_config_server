@@ -26,6 +26,45 @@ spring:
   sql:
     init:
       mode: always
+  cloud:
+    function:
+      definition: processEmail
+    stream:
+      default:
+        consumer:
+          queue-name-group-only: true
+        producer:
+          exchange-type: topic
+      bindings:
+        welcome-email:
+          destination: accounts-events
+        welcome-sms:
+          destination: accounts-events
+        processEmail-in-0:
+          destination: notifications-events
+          group: welcome-email-sent
+      rabbit:
+        bindings:
+          welcome-email:
+            producer:
+              routing-key: accounts-events.welcome-email
+          welcome-sms:
+            producer:
+              routing-key: accounts-events.welcome-sms
+          processEmail-in-0:
+            consumer:
+              dead-letter-exchange: notifications-events.dlx
+              dead-letter-routing-key: notifications-events.welcome-email-sent.dlq
+              auto-bind-dlq: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
+
+
 
 eureka:
   instance:
