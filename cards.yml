@@ -4,6 +4,7 @@ author:
 
 server:
   port: 8091
+
 spring:
   application:
     name: "cards"
@@ -34,12 +35,11 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: "http://localhost:8081/eureka/"
-
-info:
-  app:
-    name: "cards"
-    description: "EzBank Cards Application"
-    version: 0.0.1
+  info:
+    app:
+      name: "cards"
+      description: "EzBank Cards Application"
+      version: 0.0.1
 
 management:
   endpoints:
@@ -60,3 +60,11 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

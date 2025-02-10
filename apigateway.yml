@@ -23,6 +23,11 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: "http://localhost:8081/eureka/"
+  info:
+    app:
+      name: "apigateway"
+      description: "API Gateway"
+      version: 0.0.1
 
 management:
   endpoints:
@@ -35,15 +40,15 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
-info:
-  app:
-    name: "apigateway"
-    description: "API Gateway"
-    version: 0.0.1
 
 logging:
   level:
     com:
       ezbank:
         apigateway: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

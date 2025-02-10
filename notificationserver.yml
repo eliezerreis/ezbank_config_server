@@ -58,12 +58,6 @@ spring:
     password: guest
     connection-timeout: 10s
 
-info:
-  app:
-    name: "notificationserver"
-    description: "EzBank Notification Application"
-    version: 0.0.1
-
 management:
   endpoints:
     web:
@@ -83,3 +77,10 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
